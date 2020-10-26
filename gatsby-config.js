@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/StaticSiteFrontEnd",
+  pathPrefix: "/StaticSiteFrontEnds",
   siteMetadata: {
     title: `Eigen Research`,
     description: ``,
