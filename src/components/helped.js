@@ -14,7 +14,7 @@ const Helped = () => {
         edges {
           node {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 200) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -32,7 +32,7 @@ const Helped = () => {
     counter++
     helpedRow.push(
       <Col sm className="p-4" key={`col-${counter}-${i}`}>
-        <Img fluid={image} />
+        <Img className="mx-auto" style={{ maxWidth: 200 }} fluid={image} />
       </Col>
     )
     if (counter === 5 || i === data.helpedImages.edges.length - 1) {
