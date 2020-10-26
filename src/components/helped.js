@@ -31,7 +31,7 @@ const Helped = () => {
     let image = data.helpedImages.edges[i].node.childImageSharp.fluid
     counter++
     helpedRow.push(
-      <Col className="p-4" key={`col-${counter}-${i}`}>
+      <Col sm className="p-4" key={`col-${counter}-${i}`}>
         <Img fluid={image} />
       </Col>
     )

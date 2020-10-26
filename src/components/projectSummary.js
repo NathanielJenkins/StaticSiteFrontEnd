@@ -52,7 +52,7 @@ const ProjectSummary = () => {
     <Styled>
       <Container>
         <Row>
-          <Col className="my-auto">
+          <Col md={6} className="my-auto">
             <Img
               className="shadow rounded mb-4"
               fluid={images[imageIndex].node.childImageSharp.fluid}
@@ -62,7 +62,7 @@ const ProjectSummary = () => {
               See Projects
             </Link>
           </Col>
-          <Col>
+          <Col md={6}>
             {images.map((value, index) => {
               const image = value.node.childImageSharp.fluid
               return (

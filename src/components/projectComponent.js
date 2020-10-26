@@ -18,36 +18,37 @@ const ProjectComponent = ({ image, left }) => {
     rowClass = "left"
   }
 
-  const imageSideCol = (
-    <Col className="m-4">
-      <Img className="shadow rounded" fluid={image} />
-    </Col>
-  )
-  const textSideCol = (
-    <Col className="m-4 my-auto">
-      <span>
-        <h2>{image.projectTextData.title}</h2>
-        <p className="grey">{image.projectTextData.des}</p>
-      </span>
-    </Col>
-  )
+  const imageSideCol = reorder => {
+    let reorderClass = ""
+    if (reorder) reorderClass = "order-md-1"
+    return (
+      <Col md className={`col-sm-6 m-4 my-auto ${reorderClass}`}>
+        <Img className="shadow rounded" fluid={image} />
+      </Col>
+    )
+  }
+  const textSideCol = reorder => {
+    let reorderClass = ""
+    if (reorder) reorderClass = "order-md-12"
+    return (
+      <Col md className={`m-4 my-auto ${reorderClass}`}>
+        <span>
+          <h2>{image.projectTextData.title}</h2>
+          <p className="grey">{image.projectTextData.des}</p>
+        </span>
+      </Col>
+    )
+  }
 
   return (
     <Styled>
       <div className={`${rowClass} p-4 p-4`}>
         <Container>
           <Row>
-            {left ? (
-              <>
-                {imageSideCol}
-                {textSideCol}
-              </>
-            ) : (
-              <>
-                {textSideCol}
-                {imageSideCol}
-              </>
-            )}
+            <>
+              {textSideCol(left)}
+              {imageSideCol(left)}
+            </>
           </Row>
         </Container>
       </div>
